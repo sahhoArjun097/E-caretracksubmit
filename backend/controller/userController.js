@@ -183,7 +183,7 @@ export const addNewDoc = catchAsyncError(async (req, res, next) => {
         !gender ||
         !dob ||
         !nic ||
-        !docterDepatement
+        !docterDepartment
     ) {
         return next(new ErrorHandler("Please fill all the details", 400));
     }

@@ -1,207 +1,4 @@
-// import axios from "axios";
-// import { useState } from "react";
 
-// function AddNewDoctor() {
-//   const [formData, setFormData] = useState({
-//     firstName: "",
-//     lastName: "",
-//     email: "",
-//     phone: "",
-//     password: "",
-//     gender: "",
-//     dob: "",
-//     nic: "",
-//     doctorDepartment: "",
-//     docAvatar: null,
-//   });
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
-
-//   const handleFileChange = (e) => {
-//     setFormData({ ...formData, docAvatar: e.target.files[0] });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const formDataToSend = new FormData();
-//       Object.keys(formData).forEach((key) => {
-//         formDataToSend.append(key, formData[key]);
-//       });
-
-//       const { data } = await axios.post(
-//         `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/doctor/addnew`,
-//         formDataToSend,
-//         {
-//           withCredentials: true,
-//           headers: { "Content-Type": "multipart/form-data" },
-//         }
-//       );
-
-//       alert(data.message);
-//       setFormData({
-//         firstName: "",
-//         lastName: "",
-//         email: "",
-//         phone: "",
-//         password: "",
-//         gender: "",
-//         dob: "",
-//         nic: "",
-//         doctorDepartment: "",
-//         docAvatar: null,
-//       });
-//     } catch (error) {
-//       alert(error.response?.data?.message || "Something went wrong");
-//     }
-//   };
-
-//   return (
-//     <div className="flex min-h-screen bg-gray-100 justify-center items-center">
-//       <div className="w-full max-w-3xl px-6 py-8 bg-white shadow-lg rounded-md">
-//         <h1 className="text-3xl font-bold text-center mb-6">Add New Doctor</h1>
-//         <form onSubmit={handleSubmit} className="space-y-4">
-//           <div className="flex flex-col items-center">
-//             <label className="font-medium mb-2">Profile Picture</label>
-//             <input
-//               type="file"
-//               name="docAvatar"
-//               onChange={handleFileChange}
-//               className="block w-full px-3 py-2 border rounded-md"
-//               required
-//             />
-//           </div>
-
-//           <div className="grid grid-cols-2 gap-4">
-//             <div>
-//               <label className="block font-medium mb-2">First Name</label>
-//               <input
-//                 type="text"
-//                 name="firstName"
-//                 value={formData.firstName}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-//             <div>
-//               <label className="block font-medium mb-2">Last Name</label>
-//               <input
-//                 type="text"
-//                 name="lastName"
-//                 value={formData.lastName}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-
-//             <div>
-//               <label className="block font-medium mb-2">Email</label>
-//               <input
-//                 type="email"
-//                 name="email"
-//                 value={formData.email}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-//             <div>
-//               <label className="block font-medium mb-2">Phone</label>
-//               <input
-//                 type="text"
-//                 name="phone"
-//                 value={formData.phone}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-
-//             <div>
-//               <label className="block font-medium mb-2">Password</label>
-//               <input
-//                 type="password"
-//                 name="password"
-//                 value={formData.password}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-//             <div>
-//               <label className="block font-medium mb-2">Gender</label>
-//               <select
-//                 name="gender"
-//                 value={formData.gender}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               >
-//                 <option value="">Select Gender</option>
-//                 <option value="Male">Male</option>
-//                 <option value="Female">Female</option>
-//                 <option value="Other">Other</option>
-//               </select>
-//             </div>
-
-//             <div>
-//               <label className="block font-medium mb-2">Date of Birth</label>
-//               <input
-//                 type="date"
-//                 name="dob"
-//                 value={formData.dob}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-//             <div>
-//               <label className="block font-medium mb-2">NIC</label>
-//               <input
-//                 type="text"
-//                 name="nic"
-//                 value={formData.nic}
-//                 onChange={handleInputChange}
-//                 className="w-full px-3 py-2 border rounded-md"
-//                 required
-//               />
-//             </div>
-//           </div>
-
-//           <div>
-//             <label className="block font-medium mb-2">Department</label>
-//             <input
-//               type="text"
-//               name="doctorDepartment"
-//               value={formData.doctorDepartment}
-//               onChange={handleInputChange}
-//               className="w-full px-3 py-2 border rounded-md"
-//               required
-//             />
-//           </div>
-
-//           <div className="text-center">
-//             <button
-//               type="submit"
-//               className="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-md shadow-md hover:opacity-90 focus:outline-none"
-//             >
-//               Add Doctor
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AddNewDoctor;
-
-// import { Navigate, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { Context } from "../main";
 import axios from "axios";
@@ -418,3 +215,210 @@ const AddNewDoctor = () => {
 };
 
 export default AddNewDoctor;
+
+
+
+// import axios from "axios";
+// import { useState } from "react";
+
+// function AddNewDoctor() {
+//   const [formData, setFormData] = useState({
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     phone: "",
+//     password: "",
+//     gender: "",
+//     dob: "",
+//     nic: "",
+//     doctorDepartment: "",
+//     docAvatar: null,
+//   });
+
+//   const handleInputChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleFileChange = (e) => {
+//     setFormData({ ...formData, docAvatar: e.target.files[0] });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const formDataToSend = new FormData();
+//       Object.keys(formData).forEach((key) => {
+//         formDataToSend.append(key, formData[key]);
+//       });
+
+//       const { data } = await axios.post(
+//         `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/doctor/addnew`,
+//         formDataToSend,
+//         {
+//           withCredentials: true,
+//           headers: { "Content-Type": "multipart/form-data" },
+//         }
+//       );
+
+//       alert(data.message);
+//       setFormData({
+//         firstName: "",
+//         lastName: "",
+//         email: "",
+//         phone: "",
+//         password: "",
+//         gender: "",
+//         dob: "",
+//         nic: "",
+//         doctorDepartment: "",
+//         docAvatar: null,
+//       });
+//     } catch (error) {
+//       alert(error.response?.data?.message || "Something went wrong");
+//     }
+//   };
+
+//   return (
+//     <div className="flex min-h-screen bg-gray-100 justify-center items-center">
+//       <div className="w-full max-w-3xl px-6 py-8 bg-white shadow-lg rounded-md">
+//         <h1 className="text-3xl font-bold text-center mb-6">Add New Doctor</h1>
+//         <form onSubmit={handleSubmit} className="space-y-4">
+//           <div className="flex flex-col items-center">
+//             <label className="font-medium mb-2">Profile Picture</label>
+//             <input
+//               type="file"
+//               name="docAvatar"
+//               onChange={handleFileChange}
+//               className="block w-full px-3 py-2 border rounded-md"
+//               required
+//             />
+//           </div>
+
+//           <div className="grid grid-cols-2 gap-4">
+//             <div>
+//               <label className="block font-medium mb-2">First Name</label>
+//               <input
+//                 type="text"
+//                 name="firstName"
+//                 value={formData.firstName}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+//             <div>
+//               <label className="block font-medium mb-2">Last Name</label>
+//               <input
+//                 type="text"
+//                 name="lastName"
+//                 value={formData.lastName}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+
+//             <div>
+//               <label className="block font-medium mb-2">Email</label>
+//               <input
+//                 type="email"
+//                 name="email"
+//                 value={formData.email}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+//             <div>
+//               <label className="block font-medium mb-2">Phone</label>
+//               <input
+//                 type="text"
+//                 name="phone"
+//                 value={formData.phone}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+
+//             <div>
+//               <label className="block font-medium mb-2">Password</label>
+//               <input
+//                 type="password"
+//                 name="password"
+//                 value={formData.password}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+//             <div>
+//               <label className="block font-medium mb-2">Gender</label>
+//               <select
+//                 name="gender"
+//                 value={formData.gender}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               >
+//                 <option value="">Select Gender</option>
+//                 <option value="Male">Male</option>
+//                 <option value="Female">Female</option>
+//                 <option value="Other">Other</option>
+//               </select>
+//             </div>
+
+//             <div>
+//               <label className="block font-medium mb-2">Date of Birth</label>
+//               <input
+//                 type="date"
+//                 name="dob"
+//                 value={formData.dob}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+//             <div>
+//               <label className="block font-medium mb-2">NIC</label>
+//               <input
+//                 type="text"
+//                 name="nic"
+//                 value={formData.nic}
+//                 onChange={handleInputChange}
+//                 className="w-full px-3 py-2 border rounded-md"
+//                 required
+//               />
+//             </div>
+//           </div>
+
+//           <div>
+//             <label className="block font-medium mb-2">Department</label>
+//             <input
+//               type="text"
+//               name="doctorDepartment"
+//               value={formData.doctorDepartment}
+//               onChange={handleInputChange}
+//               className="w-full px-3 py-2 border rounded-md"
+//               required
+//             />
+//           </div>
+
+//           <div className="text-center">
+//             <button
+//               type="submit"
+//               className="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-md shadow-md hover:opacity-90 focus:outline-none"
+//             >
+//               Add Doctor
+//             </button>
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default AddNewDoctor;
+
+// import { Navigate, useNavigate } from "react-router-dom";
