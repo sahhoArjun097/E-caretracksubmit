@@ -62,6 +62,7 @@ const DocterDetail = () => {
                     <strong>NIC:</strong> {doctor.nic}
                 </p>
                 <p>
+                    < FaBirthdayCake className="inline mr-2 text-gray-600" />
                     <strong>Date of Birth:</strong>{" "}
                     {new Date(doctor.dob).toISOString().split("T")[0]}
                 </p>
