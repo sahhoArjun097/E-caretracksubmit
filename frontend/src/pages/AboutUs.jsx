@@ -9,7 +9,7 @@ const AboutUs = () => {
             About CareTrack Healthcare
           </h1>
           <p className="text-lg font-bold md:text-xl text-gray-700">
-            At CareTrack, we strive to simplify hospital management with innovative and user-friendly solutions. Our platform empowers healthcare providers to focus on what truly matters delivering exceptional  care to patients.
+            At CareTrack, we strive to simplify e-hospital  with innovative and user-friendly solutions. Our platform empowers healthcare providers to focus on what truly matters delivering exceptional  care to patients.
           </p>
         </div>
         
