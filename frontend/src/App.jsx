@@ -12,6 +12,7 @@ import { Context } from "./main";
 import axios from "axios";
 import Footer from "./components/Footer";
 import Docter from "./pages/Docter";
+import DocterDetail from "./components/DocterDetail";
 
 function App() {
   const { setIsAuthenticated, setUser } = useContext(Context);
@@ -44,7 +45,8 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/jjs" element={<Docter />} />
+          <Route path="/docter" element={<Docter />} />
+          <Route path="/doctor/:id" element={<DocterDetail />} />
         </Routes>
         <Footer />
       </Router>

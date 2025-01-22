@@ -56,6 +56,12 @@ const Navbar = () => {
           >
             APPOINTMENTS
           </Link>
+          <Link
+            to="/docter"
+            className="hover:text-blue-300 transition duration-300"
+          >
+            DOCTERS
+          </Link>
         </div>
       </div>
       <div>
