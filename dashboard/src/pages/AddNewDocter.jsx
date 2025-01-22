@@ -108,56 +108,71 @@ const AddNewDoctor = () => {
   }
   return (
     <section className="min-h-screen bg-gray-100 flex justify-center items-center">
-      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-4xl">
-        <img src="/logo.png" alt="logo" className="w-20 mx-auto mb-6" />
+      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-4xl overflow-auto">
+        <img src="/adddoc.png" alt="logo" className="w-20 mx-auto mb-6" />
         <h1 className="text-2xl font-bold text-center mb-8 text-gray-800">
           Register a New Doctor
         </h1>
         <form onSubmit={handleAddNewDoctor} className="space-y-6">
-          <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className="w-full md:w-1/3 text-center">
-              <img
-                src={
-                  docAvatarPreview ? `${docAvatarPreview}` : "/docHolder.jpg"
-                }
-                alt="Doctor Avatar"
-                className="w-32 h-32 object-cover rounded-full mx-auto mb-4"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Avatar Section */}
+            <div className="flex flex-col items-center p-6 bg-gradient-to-r from-blue-400 to-blue-600 shadow-md rounded-lg border border-gray-200">
+              <div className="w-40 h-40  bg-white mb-4 rounded-full relative">
+                <img
+                  src={docAvatarPreview ? `${docAvatarPreview}` : "/docHolder.jpg"}
+                  alt=""
+                  className="w-full h-full object-cover rounded-full shadow-lg border-4 border-blue-200"
+                />
+              </div>
+              <label
+                htmlFor="avatarUpload"
+                className="block text-sm text-gray-700 font-medium mb-2"
+              >
+                Upload Avatar
+              </label>
               <input
                 type="file"
+                id="avatarUpload"
                 onChange={handleAvatar}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
               />
             </div>
-            <div className="w-full md:w-2/3 space-y-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
-              <input
-                type="tel"
-                placeholder="Mobile Number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
+
+
+            {/* Input Fields */}
+            <div className="col-span-2 space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+                />
+                <input
+                  type="tel"
+                  placeholder="Mobile Number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+                />
+              </div>
               <input
                 type="text"
                 placeholder="NIC"
@@ -165,22 +180,24 @@ const AddNewDoctor = () => {
                 onChange={(e) => setNic(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
               />
-              <input
-                type="date"
-                placeholder="Date of Birth"
-                value={dob}
-                onChange={(e) => setDob(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
-              <select
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              >
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="date"
+                  placeholder="Date of Birth"
+                  value={dob}
+                  onChange={(e) => setDob(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+                />
+                <select
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+                >
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
               <input
                 type="password"
                 placeholder="Password"
@@ -211,6 +228,7 @@ const AddNewDoctor = () => {
         </form>
       </div>
     </section>
+
   );
 };
 
