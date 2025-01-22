@@ -9,13 +9,18 @@ Provide a brief overview of your project. Explain what it does, its purpose, and
 Add some visual examples of your project in action.
 
 ### **Home Page**
-![Home Page Screenshot](./path-to-screenshot/homepage.png)
-
+![Home Page Screenshot](![image](https://github.com/user-attachments/assets/755ca108-e7ab-4bb8-bdff-bb8d566fe374)
+)
 ### **Feature 1**
-![Feature Screenshot](./path-to-screenshot/feature1.png)
-
-### **Another Section**
-![Section Screenshot](./path-to-screenshot/section.png)
+![Feature Screenshot](![image](https://github.com/user-attachments/assets/8e725368-c1b5-4b50-a548-6c4f4ec8a885)
+)
+### **Appointment Section**
+![Section Screenshot](![image](https://github.com/user-attachments/assets/7e908164-a5ca-4f1b-8157-6af02a53d1be)
+)
+### **DOCTER Section**
+![Section Screenshot](![image](https://github.com/user-attachments/assets/1ec79f44-8e9e-4e61-81a7-82564320dcba)
+)
+)
 
 > Replace `./path-to-screenshot/` with the correct paths to your images in the repository.
 
