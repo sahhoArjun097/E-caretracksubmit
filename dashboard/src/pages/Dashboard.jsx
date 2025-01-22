@@ -53,7 +53,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-gray-100  p-5 flex flex-col md:flex-row">
       <div className="w-full md:pl-52 p-6">
         {/* Admin Info */}
         <div className="bg-blue-500 text-white p-6 rounded-lg shadow-md mb-6">
