@@ -1,0 +1,34 @@
+# Node.js dependencies
+backend/node_modules
+node_modules
+node_modules
+
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+config/config.env
+.env
+
+# Build output
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# IDE settings
+.vscode/
+.idea/
