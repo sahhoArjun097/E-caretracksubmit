@@ -38,34 +38,34 @@ const Doctor = () => {
   }
 
   return (
-    <div className="w-full min-h-screen px-52 p-10   bg-gray-50">
-      <div className="container mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 text-blue-900">
+    <div className="w-full min-h-screen bg-gray-50  flex justify-end  px-20">
+      <div className="w-full max-w-6xl border border-gray-300 rounded-lg bg-white shadow-lg p-10">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-blue-900 text-center">
           Doctors Information
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {doctors.slice(0, visibleDoctors).map((doctor) => (
             <div
               key={doctor._id}
-              className="border rounded-lg p-4 shadow-md bg-white hover:shadow-lg transition-shadow duration-300"
+              className="border rounded-lg p-6 shadow-md bg-gray-100 hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="w-full h-56">
+              <div className="w-full h-56 mb-4">
                 <img
                   src={doctor.docAvatar.url}
                   alt={`${doctor.firstName} ${doctor.lastName}`}
-                  className="w-full h-full object-cover rounded-lg mb-4"
+                  className="w-full h-full object-cover rounded-lg"
                 />
               </div>
-              <h2 className="text-lg font-semibold">
+              <h2 className="text-xl font-semibold mb-2">
                 {doctor.firstName} {doctor.lastName}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-700 mb-1">
                 <strong>Department:</strong> {doctor.docterDepartment}
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-700 mb-1">
                 <strong>Email:</strong> {doctor.email}
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 <strong>Phone:</strong> {doctor.phone}
               </p>
             </div>
