@@ -36,32 +36,34 @@ const AboutUs = () => {
         </div>
        
         <div className="flex flex-wrap justify-center gap-6 px-6">
-          {/* Feature Cards */}
+          
           {[
-            {
-              title: "Appointment Scheduling",
-              description:
-                "Automate and optimize appointment bookings, reducing waiting times and ensuring seamless coordination.",
-              icon: "/schedule_11394187.png", // Replace with your icon path
-            },
-            {
-              title: "Patient Records Management",
-              description:
-                "Efficiently manage patient profiles, medical history, and treatment plans with our intuitive system.",
-              icon: "/medical-record_15536393.png", // Replace with your icon path
-            },
-            {
-              title: "Real-Time Reporting",
-              description:
-                "Access real-time data and generate comprehensive reports for better decision-making.",
-              icon: "/real-time_3043535.png", // Replace with your icon path
-            },
-            {
-              title: "Discussion Forums",
-              description:
-                "Engage in discussions and share insights with your peers.",
-              icon: "/conversation_6086413.png", // Replace with your icon path
-            },
+           {
+            title: "Direct Communication",
+            description:
+              "Enable seamless and secure communication between patients and doctors.",
+              icon: "/conversation_6086413.png", 
+            // icon: "/schedule_11394187.png",
+          },
+          {
+            title: "Doctor Profiles",
+            description:
+              "Explore detailed profiles of doctors, including specialties and availability.",
+            icon: "/medical-record_15536393.png", 
+          },
+          {
+            title: "Secure Authentication",
+            description:
+              "Ensure secure access with robust authentication mechanisms.",
+            icon: "/real-time_3043535.png", 
+          },
+          {
+            title: "Image Uploads",
+            description:
+              "Upload and share medical documents and images for better diagnosis.",
+            icon: "/imageuploade.png",
+          },
+          
          
           ].map((feature, index) => (
             <div

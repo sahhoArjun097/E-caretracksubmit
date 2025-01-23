@@ -4,7 +4,7 @@ import { Context } from "../main";
 
 const Doctor = () => {
   const [doctors, setDoctors] = useState([]);
-  const [visibleDoctors, setVisibleDoctors] = useState(8); // Number of initially visible doctors
+  const [visibleDoctors, setVisibleDoctors] = useState(6); // Number of initially visible doctors
   const { isAuthenticated } = useContext(Context);
 
   const fetchDoctors = async () => {
