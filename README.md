@@ -7,9 +7,6 @@ Efficiently manage hospital operations with our comprehensive and user-friendly 
 
 
 
-> Replace `./path-to-screenshot/` with the correct paths to your images in the repository.
-
-
 ## 🚀 Technologies Used
 - **Frontend**:  React, Tailwind CSS, JavaScript
 - **Backend**: Node.js 
