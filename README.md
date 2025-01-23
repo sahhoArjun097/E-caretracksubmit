@@ -32,3 +32,29 @@ cd E-caretracksubmit
 # Install dependencies
 npm install  
 
+# Navigate to backend folder
+cd backend
+
+# Install dependencies
+npm install
+
+# Start the dashboart server
+npm run dev
+# Navigate to dashboard folder 
+cd dashboard
+
+# Install dependencies
+npm install
+
+# Start the frontend server
+npm run dev
+# Navigate to frontend folder 
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start the frontend server
+npm run dev
+
+
